@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang='us'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <title>CSS Flexbox Layout</title>
+
+        <!-- myGlobalCSS -->
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="https://thiago-meneses.github.io/spacing.css">
+
+
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=Nunito:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="bd-container">
+            <aside>
+                <div class="sidebar-container">
+                    <details class="navbar mt-5">
+                        <summary>Flex Elements</summary>
+                        <ul class="navbar-ul noBullet px-3">
+                            <li class="mx-1 py-1"><a href="#flexContainer">Container</a></li>
+                            <li class="mx-1 py-1"><a href="#flexItems">Items</a></li>
+                        </ul>
+                    </details>
+                </div>
+            </aside>
+            <main class='main-container'>
+                <div class='main-content'>
+                    <header class="content-header">
+                        <h1>Flexbox Layout</h1><br>
+                        <p>The <b>Flexible Box Layout Module</b> makes it easier to design flexible responsive layouts structures</p>
+                        <p>With Flexbox there is no need to use float or positioning.</p>
+                        <p>With media queries this can be extremely useful for building layouts that change for different screen sizes and devices</p>
+                        <br><br>
+                    </header>
+                    <div class='content'>
+                        <h1>Flexbox Elements</h1>
+                        <p>The Flexbox is composed of 2 elements:</p>
+                        <ul>
+                            <li>The <span class="red-cream">Flex Container</span></li>
+                            <li>The <span class="red-cream">Flex Items</span></li>
+                        </ul>
+                        <img src="img/containerItems.png" alt="Flex Container and Items" class="mt-3 img-sm-60 img-md-70 img100 br-25">
+                        <div class='borderline'>
+                            <h1 class='headline' id="flexContainer"><span class="backdrop">Flex <span class="red-cream">Container</span></span></h1>
+                            <p class="pl-md-0 pr-md-0 pl-1 pr-5">The flex container is RESPONSIBLE for CONTAINING the flex items.</p>
+                            <p class="pl-md-0 pr-md-0 pl-1 pr-5">It is the parent element.</p>
+                            <p class="pl-md-0 pr-md-0 pl-1 pr-5">The flex container becomes flexible by setting the display property as "flex" ( display: flex; ).</p>
+                            <div class='chapter'>
+                                <h2 class='chapter-title'><span class='backdrop'>Flex Container Properties</span></h2>
+                                <div class='my-3 px-md-3 px-1'>
+                                    <div class='subchapter'>
+                                        <h3 class="subchapter-title"><span class='backdrop'><code class="inlineCode">display</code></span></h3>
+                                        <div class='px-md-3 px-1'>
+                                            <p class="pl-2 pr-4 pr-4">Specifies the <b>display behavior</b>, in order words, the type of rendering box for an HTML element</p>
+                                            <br>
+                                            <h3 class="pl-2">Most important values:</h3>
+                                            <ul class='px-2 noBullet'>
+                                                <li class="mt-2">
+                                                    <code class="inlineCode">inline</code>
+                                                    <p class="pl-3 pr-4">Displays an element as an inline element (like &#60span&#62).</p>
+                                                    <p class="pl-3 pr-4">Height and width properties will have <b>no effect</b>.</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">block</code>
+                                                    <p class="pl-3 pr-4">Displays an element as a block element (like &#60p&#62).</p>
+                                                    <p class="pl-3 pr-4">The element starts on a new line and takes up the whole width</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">inline-block</code>
+                                                    <p class="pl-3 pr-4">Displays an element as an inline-level block container.</p>
+                                                    <p class="pl-3 pr-4">The element itself is formatted as an inline element.</p>
+                                                    <p class="pl-3 pr-4">Height and width values can still be applied.</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">flex</code>
+                                                    <p class="pl-3 pr-4">Displays an element as a block-level flex container</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">grid</code>
+                                                    <p class="pl-3 pr-4">Displays an element as a block-level grid container</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">inline-flex</code>
+                                                    <p class="pl-3 pr-4">Displays an element as an inline-level flex container</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">inline-grid</code>
+                                                    <p class="pl-3 pr-4">Displays an element as an inline-level grid container</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">none</code>
+                                                    <p class="pl-3 pr-4">The element is completely removed</p>
+                                                </li>
+                                            </ul>
+                                        </div> 
+                                    </div>  
+                                    <div class='subchapter'>
+                                        <h3 class="subchapter-title"><span class='backdrop'><code class='inlineCode'>flex-direction</code></span></h3>
+                                        <div class="px-md-3 px-1">
+                                            <p>Defines in which direction the container will stack the flex items</p>
+                                            <img src="img/flexDirection.png" alt="Flex Direction" class="mt-3 img-sm-60 img-md-70 img100 br-25">
+                                            <p>Accepted values:</p>
+                                            <ul class='px-2 noBullet'>
+                                                <li class="mt-2">
+                                                    <code class="inlineCode">column</code>
+                                                    <p class="pl-3 pr-4">Stacks the items vertically.</p>
+                                                    <p class="pl-3 pr-4">From the top to the bottom.</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">column-reverse</code>
+                                                    <p class="pl-3 pr-4">Stacks the items vertically.</p>
+                                                    <p class="pl-3 pr-4">From the bottom to the top.</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">row</code>
+                                                    <p class="pl-3 pr-4">Stacks the items horizontally.</p>
+                                                    <p class="pl-3 pr-4">From the left to the right.</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">row-reverse</code>
+                                                    <p class="pl-3 pr-4">Stacks the items horizontally.</p>
+                                                    <p class="pl-3 pr-4">From the right to the left.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class='subchapter'>
+                                        <h3 class="subchapter-title"><span class='backdrop'><code class='inlineCode'>flex-wrap</code></span></h3>
+                                        <div class='px-md-3 px-1'>
+                                            <p>Specifies whether the flex items should wrap or not.</p>
+                                            <img src="img/flexWrap.png" alt="Flex Wrap" class="mt-3 img-sm-60 img-md-70 img100 br-25">
+                                            <p>Accepted values:</p>
+                                            <ul class='px-2 noBullet'>
+                                                <li class="mt-2">
+                                                    <code class="inlineCode">wrap</code>
+                                                    <p class="pl-3 pr-4">Flex items will wrap if necessary.</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">nowrap</code>
+                                                    <p class="pl-3 pr-4">Flex items will not wrap.</p>
+                                                    <p class="pl-3 pr-4">This is set as the default value.</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">wrap-reverse</code>
+                                                    <p class="pl-3 pr-4">Flexible items will wrap in reverse order.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class='subchapter'>
+                                        <h3 class="subchapter-title"><span class='backdrop'><code class='inlineCode'>flex-flow</code></span></h3>
+                                        <div class='px-md-3 px-1'>
+                                            <p>Shorthand property for setting both the flex-direction and flex-wrap properties.</p>
+                                            <div class="example-container-subchapter">
+                                                <p>Example:</p>
+                                                <pre class="snippet">
+                                                    <code>
+    flex-flow: row wrap; ( same for "flex-direction: row" and "flex-flow: wrap" )
+                                                    </code> 
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='subchapter'>
+                                        <h3 class="subchapter-title"><span class='backdrop'><code class='inlineCode'>justify-content</code></span></h3>
+                                        <div class='px-md-3 px-1'>
+                                            <p>Used to align the flex items on the main axis.</p>
+                                            <img src="img/justifyContent.png" alt="Justify Content" class="mt-3 img-sm-60 img-md-70 img100 br-25">
+                                            <p>Accepted values:</p>
+                                            </p>
+                                            <ul class='px-2 noBullet'>
+                                                <li class="mt-2">
+                                                    <code class="inlineCode">center</code>
+                                                    <p class="pl-3 pr-4">Aligns the flex items at the center of the container</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">flex-start</code>
+                                                    <p class="pl-3 pr-4">Aligns the flex items at the beginning of the container.</p>
+                                                    <p class="pl-3 pr-4">This is set as the default value.</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">flex-end</code>
+                                                    <p class="pl-3 pr-4">Aligns the flex items at the end of the container.</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">space-around</code>
+                                                    <p class="pl-3 pr-4">Displays the flex items with space before, between, and after the lines.</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">space-between</code>
+                                                    <p class="pl-3 pr-4">Displays the flex items with space between the lines.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class='subchapter'>
+                                        <h3 class="subchapter-title"><span class='backdrop'><code class='inlineCode'>align-items</code></span></h3>
+                                        <div class='px-md-3 px-1'>
+                                            <p>Used to align the flex items on the cross axis.</p>
+                                            <img src="img/alignItems.png" alt="Align Items" class="mt-3 img-sm-60 img-md-70 img100 br-25">
+                                            <p>Accepted values:</p>
+                                            <ul class='px-2 noBullet'>
+                                                <li class="mt-2">
+                                                    <code class="inlineCode">center</code>
+                                                    <p class="pl-3 pr-4">Aligns the flex items in the middle of the container</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">flex-start</code>
+                                                    <p class="pl-3 pr-4">Aligns the flex items at the top of the container.</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">flex-end</code>
+                                                    <p class="pl-3 pr-4">Aligns the flex items at the bottom of the container.</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">stretch</code>
+                                                    <p class="pl-3 pr-4">Stretches the flex items to fill the container.</p>
+                                                    <p class="pl-3 pr-4">This is set as the default value.</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">baseline</code>
+                                                    <p class="pl-3 pr-4">Aligns the flex items such as their baselines aligns.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class='subchapter'>
+                                        <h3 class="subchapter-title"><span class='backdrop'><code class='inlineCode'>align-content</code></span></h3>
+                                        <div class='px-md-3 px-1'>
+                                            <p>Used to align the flex lines.</p>
+                                            <img src="img/alignContent.png" alt="Flex Container and Items" class="mt-3 img-sm-60 img-md-70 img100 br-25">
+                                            <p>Accepted values:</p>
+                                            <ul class='px-2 noBullet'>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">flex-start</code>
+                                                    <p class="pl-3 pr-4">Displays the flex lines at the start of the container.</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">flex-end</code>
+                                                    <p class="pl-3 pr-4">Displays the flex lines at the end of the container.</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">center</code>
+                                                    <p class="pl-3 pr-4">Displays the flex lines in the middle of the container.</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">stretch</code>
+                                                    <p class="pl-3 pr-4">Stretches the flex lines to take up the remaining space.</p>
+                                                    <p class="pl-3 pr-4">This is set as the default value.</p>
+                                                </li>
+                                                <li class="mt-2">
+                                                    <code class="inlineCode">space-between</code>
+                                                    <p class="pl-3 pr-4">Displays the flex lines with equal space between them</p>
+                                                </li>
+                                                <li class="mt-4">
+                                                    <code class="inlineCode">space-around</code>
+                                                    <p class="pl-3 pr-4">Displays the flex lines with space before, between, and after them.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="alert alert-danger" role="alert">
+                                        <p>For perfectly centering, set "justify-content" and "align-items" to center, and the flex item will be perfectly centered</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="borderline">
+                            <h1 class='headline' id="flexItems"><span class="backdrop">Flex <span class="red-cream">Items</span></span></h1>
+                            <div class="chapter">
+                                <h2 class='chapter-title'><span class='backdrop'>Flex Items Properties</span></h2>
+                                <div class='my-3 px-md-3 px-01'>
+                                    <p>The direct child elements of a flex container will automatically become flexible items</p>
+                                    <div class='subchapter'>
+                                        <h3 class="subchapter-title"><span class='backdrop'><code class="inlineCode">order</code></span></h3>
+                                        <div class='px-md-3 px-01'>
+                                            <p>Specifies the order of the flex items</p>
+                                            <p>The first flex item does not have to appear as the first item in the layout</p>
+                                            <p>The value used must be a number (default is 0)</p>
+                                            <img src="img/order.png" alt="Order" class="mt-3 img-sm-60 img-md-70 img100 br-25">
+                                            <div class="example-container-subchapter">
+                                                <p>Example:</p>
+                                                <pre class="snippet snippetPadding">
+                                                    <code>
+    &#60div style="order: 3"&#62&#60/div&#62
+                                                    </code> 
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='subchapter'>
+                                        <h3 class="subchapter-title"><span class='backdrop'><code class="inlineCode">flex-grow</code></span></h3>
+                                        <div class='px-md-3 px-1'>
+                                            <p>Specifies how much a flex item will grow relative to the rest of the flex items</p>
+                                            <p>The value must be a number (default is 0)</p>
+                                            <p>Related to the speed at which the items will grow when you resize the screen</p>
+                                            <img src="img/flexGrow.png" alt="Flex Grow" class="mt-3 img-sm-60 img-md-70 img100 br-25">
+                                            <div class="example-container-subchapter">
+                                                <p>Example:</p>
+                                                <pre class="snippet snippetPadding">
+                                                    <code>
+    &#60div style="flex-grow: 1"&#62&#60/div&#62
+    &#60div style="flex-grow: 1"&#62&#60/div&#62
+    &#60div style="flex-grow: 1"&#62&#60/div&#62
+    &#60div style="flex-grow: 8"&#62&#60/div&#62 /*Will grow 8 times as fast
+                                                    </code> 
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='subchapter'>
+                                        <h3 class="subchapter-title"><span class='backdrop'><code class="inlineCode">flex-shrink</code></span></h3>
+                                        <div class='px-md-3 px-1'>
+                                            <p>Specifies how much a flex item will shrink relative to the rest of the flex items.</p>
+                                            <img src="img/flexShrink.png" alt="Flex Shrink" class="mt-3 img-sm-60 img-md-70 img100 br-25">
+                                            <div class="example-container-subchapter">
+                                                <p>Example:</p>
+                                                <pre class="snippet snippetPadding">
+                                                    <code>
+    &#60div style="style="flex-shrink: 0"&#62 1&#60/div&#62 /*will not shrink
+                                                    </code> 
+                                                </pre>
+                                            </div>
+                                            <div class="example-container-subchapter">
+                                                <p>Example 2:</p>
+                                                <pre class="snippet snippetPadding">
+                                                    <code>
+    &#60div style="flex-shrink: 1"&#62 1&#60/div&#62
+    &#60div style="flex-shrink: 1"&#62 2&#60/div&#62
+    &#60div style="flex-shrink: 4"&#62 3&#60/div&#62 /*will shrink 4 times as fast
+                                                    </code> 
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='subchapter'>
+                                        <h3 class="subchapter-title"><span class='backdrop'><code class="inlineCode">flex-basis</code></span></h3>
+                                        <div class='px-md-3 px-1'>
+                                            <p>Specifies the initial length of a flex item.</p>
+                                            <img src="img/flexBasis.png" alt="Flex Basis" class="mt-3 img-sm-60 img-md-70 img100 br-25">
+                                            <div class="example-container-subchapter">
+                                                <p>Example:</p>
+                                                <pre class="snippet snippetPadding">
+                                                    <code>
+    &#60div style="flex-basis: 200px"&#62&#60/div&#62
+                                                    </code> 
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='subchapter'>
+                                        <h3 class="subchapter-title"><span class='backdrop'><code class="inlineCode">flex</code></span></h3>
+                                        <div class='px-md-3 px-1'>
+                                            <p>Shorthand property for the flex-grow, flex-shrink, and flex-basis properties.</p>
+                                            <div class="example-container-subchapter">
+                                                <p>Example:</p>
+                                                <pre class="snippet snippetPadding">
+                                                    <code>
+    &#60div style="flex: 0 0 200px"&#62&#60/div&#62 //flex item not growable (0), not shrinkable (0), and with an initial length of 200 pixels
+                                                    </code> 
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='subchapter'>
+                                        <h3 class="subchapter-title"><span class='backdrop'><code class="inlineCode">align-self</code></span></h3>
+                                        <div class='px-md-3 px-1'>
+                                            <p>Specifies the alignment for the selected item inside the flexible container.</p>
+                                            <p>Overrides the default alignment set by the container's "align-items" property</p>
+                                            <img src="img/alignSelf.png" alt="Align Self" class="mt-3 img-sm-60 img-md-70 img100 br-25">
+                                            <div class="example-container-subchapter">
+                                                <p>Example:</p>
+                                                <pre class="snippet snippetPadding">
+                                                    <code>
+    &#60div style="align-self: center"&#623&#60/div&#62
+                                                    </code> 
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
